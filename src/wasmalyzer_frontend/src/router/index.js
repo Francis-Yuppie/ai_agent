@@ -1,62 +1,58 @@
-import { createRouter, createWebHistory } from 'vue-router'
-
+import AppLayout from '@/layout/AppLayout.vue';
+import { createRouter, createWebHistory } from 'vue-router';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    //login
-    {
-      path: '/login',
-      name: 'Login',
-      component: () => import('@/views/Login.vue'),
-      meta: { requiresAuth: false },
-    },
-    {
-      path: '/dashboard',
-      name: 'Dashboard',
-      component: () => import('@/views/Dashboard.vue'),
-      meta: { requiresAuth: true },
-    },
-    {
-      path: '/canisters',
-      name: 'Canisters',
-      component: () => import('@/views/Canisters.vue'),
-      meta: { requiresAuth: true },
-    },
-    {
-      path: '/threats',
-      name: 'Threats',
-      component: () => import('@/views/Threats.vue'),
-      meta: { requiresAuth: true },
-    },
-    {
-      path: '/reports',
-      name: 'Reports',
-      component: () => import('@/views/Reports.vue'),
-      meta: { requiresAuth: true },
-    },
-    {
-      path: '/account',
-      name: 'Account',
-      component: () => import('@/views/Account.vue'),
-      meta: { requiresAuth: true },
-    },
-  ],
-})
+    history: createWebHistory(),
+    routes: [
+        {
+            path: '/dashboard',
+            component: AppLayout,
+            children: [
+                {
+                    path: '/dashboard',
+                    name: 'dashboard',
+                    component: () => import('@/views/Dashboard.vue')
+                },
+                {
+                    path: '/pages/empty',
+                    name: 'empty',
+                    component: () => import('@/views/pages/Empty.vue')
+                },
+                {
+                    path: '/pages/caninsters',
+                    name: 'crud',
+                    component: () => import('@/views/pages/CaninstersView.vue')
+                },
 
-//route guards
-router.beforeEach((to, from, next) => {
-  const isAuthenticated = localStorage.getItem('isAuthenticated')
+            ]
+        },
+        {
+            path: '/',
+            name: 'landing',
+            component: () => import('@/views/pages/Landing.vue')
+        },
 
-  if (to.meta.requiresAuth && !isAuthenticated) {
-    next({ name: 'Login' })
-  } else if (to.name === 'Login' && isAuthenticated) {
-    next({ name: 'Dashboard' })
-  } else {
-    next()
-  }
-})
+        {
+            path: '/auth/login',
+            name: 'login',
+            component: () => import('@/views/pages/auth/Login.vue')
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: 'notFound',
+            component: () => import('@/views/pages/NotFound.vue')
+        },
+        {
+            path: '/auth/access',
+            name: 'accessDenied',
+            component: () => import('@/views/pages/auth/Access.vue')
+        },
+        {
+            path: '/auth/error',
+            name: 'error',
+            component: () => import('@/views/pages/auth/Error.vue')
+        }
+    ]
+});
 
-export default router
-
-
+export default router;
