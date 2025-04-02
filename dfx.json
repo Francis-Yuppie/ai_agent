@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "wasmalyzer_backend": {
+      "candid": "src/wasmalyzer_backend/wasmalyzer_backend.did",
+      "package": "wasmalyzer_backend",
+      "type": "rust"
+    },
+    "wasmalyzer_frontend": {
+      "dependencies": [
+        "wasmalyzer_backend"
+      ],
+      "source": [
+        "src/wasmalyzer_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "wasmalyzer_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
