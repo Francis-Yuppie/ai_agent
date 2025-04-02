@@ -1,12 +1,12 @@
 <script setup>
-import { ref } from 'vue';
-import { wasmalyzer_backend } from 'declarations/wasmalyzer_backend/index';
-let greeting = ref('');
+import { ref } from "vue";
+import { wasmalyzer_backend } from "declarations/wasmalyzer_backend/index";
+let greeting = ref("");
 
 async function handleSubmit(e) {
   e.preventDefault();
   const target = e.target;
-  const name = target.querySelector('#name').value;
+  const name = target.querySelector("#name").value;
   await wasmalyzer_backend.greet(name).then((response) => {
     greeting.value = response;
   });
