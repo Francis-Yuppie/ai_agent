@@ -22,7 +22,7 @@ const model = ref([
     {
         label: "Account",
         items: [
-        { label: "Profile", icon: "pi pi-fw pi-user", to: "/profile" },
+        { label: "Profile", icon: "pi pi-fw pi-user", to: "/me" },
         { label: "Logout", icon: "pi pi-fw pi-sign-out", to: "/logout" },
         ],
     },
