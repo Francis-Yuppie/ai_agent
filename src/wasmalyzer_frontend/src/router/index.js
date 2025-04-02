@@ -14,15 +14,40 @@ const router = createRouter({
                     component: () => import('@/views/Dashboard.vue')
                 },
                 {
-                    path: '/pages/empty',
-                    name: 'empty',
-                    component: () => import('@/views/pages/Empty.vue')
+                    path: '/threats',
+                    name: 'threats',
+                    component: () => import('@/views/pages/ThreatsView.vue')
                 },
                 {
-                    path: '/pages/caninsters',
-                    name: 'crud',
-                    component: () => import('@/views/pages/CaninstersView.vue')
+                    path: '/canisters',
+                    name: 'canisters',
+                    component: () => import('@/views/pages/CanistersView.vue')
                 },
+                {
+                    path: '/reports',
+                    name: 'reports',
+                    component: () => import('@/views/pages/ReportsView.vue')
+                },
+                {
+                    path: '/history',
+                    name: 'history',
+                    component: () => import('@/views/pages/HistoryView.vue')
+                },
+                {
+                    path: '/settings',
+                    name: 'settings',
+                    component: () => import('@/views/pages/SettingsView.vue')
+                },
+                {
+                    path: '/help',
+                    name: 'help',
+                    component: () => import('@/views/pages/HelpView.vue')
+                },
+                {
+                    path: '/me',
+                    name: 'me',
+                    component: () => import('@/views/pages/MeView.vue')
+                }
 
             ]
         },
