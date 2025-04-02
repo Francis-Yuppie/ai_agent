@@ -1,10 +1,30 @@
 <script setup>
 import FloatingConfigurator from '@/components/FloatingConfigurator.vue';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { AuthClient } from '@dfinity/auth-client';
 
+const router = useRouter();
 const email = ref('');
 const password = ref('');
 const checked = ref(false);
+
+const loginWithInternetIdentity = async () => {
+  console.log('Starting Internet Identity login'); // Debug log
+  const authClient = await AuthClient.create();
+  await authClient.login({
+    identityProvider: `https://identity.ic0.app/?canisterId=${import.meta.env.VITE_CANISTER_ID_INTERNET_IDENTITY}`,
+    onSuccess: () => {
+      console.log('Login successful'); // Debug log
+      // Redirect to dashboard
+      console.log('Redirecting to /dashboard'); // Debug log
+      router.push('/dashboard');
+    },
+    onError: (error) => {
+      console.error('Login failed', error); // Debug log
+    },
+  });
+};
 </script>
 
 <template>
@@ -33,6 +53,22 @@ const checked = ref(false);
                         </svg>
                         <div class="text-surface-900 dark:text-surface-0 text-3xl font-medium mb-4">Welcome to PrimeLand!</div>
                         <span class="text-muted-color font-medium">Sign in to continue</span>
+                    </div>
+
+                    <!-- Internet Identity Login Button -->
+                    <div class="mb-8">
+                        <Button 
+                            @click="loginWithInternetIdentity" 
+                            class="w-full mb-4" 
+                            severity="secondary" 
+                            label="Sign in with Internet Identity"
+                        />
+                        
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="border-b w-1/5 lg:w-1/4"></span>
+                            <span class="text-xs text-center text-muted-color uppercase">or login with email</span>
+                            <span class="border-b w-1/5 lg:w-1/4"></span>
+                        </div>
                     </div>
 
                     <div>

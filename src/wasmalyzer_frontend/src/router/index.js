@@ -21,7 +21,7 @@ const router = createRouter({
                 {
                     path: '/pages/caninsters',
                     name: 'crud',
-                    component: () => import('@/views/pages/CaninstersView.vue')
+                    component: () => import('@/views/pages/CanistersView.vue')
                 },
 
             ]
