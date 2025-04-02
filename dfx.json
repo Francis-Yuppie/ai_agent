@@ -1,0 +1,27 @@
+{
+  "canisters": {
+    "ai_backend": {
+      "candid": "src/ai_backend/ai_backend.did",
+      "package": "ai_backend",
+      "type": "rust"
+    },
+    "ai_frontend": {
+      "dependencies": [
+        "ai_backend"
+      ],
+      "source": [
+        "src/ai_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "ai_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
