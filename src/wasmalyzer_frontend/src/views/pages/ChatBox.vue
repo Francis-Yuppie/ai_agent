@@ -93,7 +93,7 @@ export default {
       {
         role: { system: null },
         content:
-          "I'm a Bankai AI agent living on the Internet Computer. Ask me anything.",
+          "Hello i'm Cipher AI agent living on the Internet Computer. Ready to help.",
       },
     ]);
     const inputValue = ref("");
