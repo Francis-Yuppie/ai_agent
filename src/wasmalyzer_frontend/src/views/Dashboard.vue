@@ -16,4 +16,12 @@ import PieChart from '@/components/dashboard/PieChart.vue';
     </div>
     <RecentSalesWidget />
     </div>
+
+  <a
+    href="/chat"
+    target="_blank"
+    class="fixed bottom-6 right-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-500 shadow-lg hover:bg-blue-600 transition"
+  >
+    <img src="/demo/images/logo.svg" alt="Redirect" class="h-10 w-10 rounded-full" />
+  </a>
 </template>
