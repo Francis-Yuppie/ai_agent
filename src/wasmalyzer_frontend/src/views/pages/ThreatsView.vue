@@ -32,7 +32,7 @@ function getOrderSeverity(order) {
 
 function getSeverity(status) {
     switch (status) {
-        case 'High':
+        case 'high':
             return 'danger';
 
         case 'neutralized':

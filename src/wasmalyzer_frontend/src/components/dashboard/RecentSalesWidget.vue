@@ -31,7 +31,7 @@ onMounted(() => {
 
             <Column style="width: 15%" header="View">
                 <template #body>
-                    <Button icon="pi pi-search" type="button" class="p-button-text"></Button>
+                    <Button icon="pi pi-eye" type="button" class="p-button-text"></Button>
                 </template>
             </Column>
         </DataTable>
