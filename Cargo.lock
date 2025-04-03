@@ -948,6 +948,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "ic-cdk"
+version = "0.17.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "122efbcb0af5280d408a75a57b7dc6e9d92893bf6ed9cc98fe4dcff51f18b67c"
+dependencies = [
+ "candid",
+ "ic-cdk-macros 0.17.1",
+ "ic0",
+ "serde",
+ "serde_bytes",
+]
+
+[[package]]
 name = "ic-cdk-macros"
 version = "0.13.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1001,6 +1014,17 @@ dependencies = [
  "serde",
  "serde_bytes",
  "slotmap",
+]
+
+[[package]]
+name = "ic-llm"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ec2ff641b428ea25ead456b4ec27a13c04f7fbf10785277fada583150b484c8d"
+dependencies = [
+ "candid",
+ "ic-cdk 0.17.1",
+ "serde",
 ]
 
 [[package]]
@@ -2352,9 +2376,10 @@ dependencies = [
  "base64 0.13.1",
  "candid",
  "candid-extractor",
- "ic-cdk",
+ "ic-cdk 0.16.0",
  "ic-cdk-macros 0.13.3",
  "ic-cdk-timers",
+ "ic-llm",
  "ic-stable-structures",
  "quote",
  "reqwest",

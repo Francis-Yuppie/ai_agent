@@ -82,7 +82,7 @@
 
 <script>
 import { ref, nextTick, watch } from "vue";
-import { wasmalyzer_backend } from "/var/www/html/projects/ai_agent/src/declarations/wasmalyzer_backend/index";
+import { wasmalyzer_backend } from "/var/www/html/projects/blockchain/wasmalyzer/src/declarations/wasmalyzer_backend/index";
 import botImg from "/bot.svg";
 import userImg from "/user.svg";
 //   import '@/index.css';

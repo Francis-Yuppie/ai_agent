@@ -24,9 +24,9 @@ type RepoAnalysisResult = record {
   code : text;
   vulnerabilities : vec Vulnerability;
 };
-type Result = variant { Ok : text; Err : text };
-type Result_1 = variant { Ok : RepoAnalysisResult; Err : text };
-type Result_2 = variant { Ok : CanisterInfo; Err : text };
+type Result = variant { Ok : RepoAnalysisResult; Err : text };
+type Result_1 = variant { Ok : CanisterInfo; Err : text };
+type Result_2 = variant { Ok : text; Err : text };
 type Result_3 = variant { Ok : vec text; Err : text };
 type Result_4 = variant { Ok : bool; Err : ErrorResponse };
 type Result_5 = variant { Ok; Err : text };
@@ -38,10 +38,9 @@ type Vulnerability = record {
   location : text;
 };
 service : {
-  analyze_github_repo : (text) -> (Result);
-  analyze_repository : (text) -> (Result_1);
-  canister_info : (principal) -> (Result_2);
-  canister_metadata : (principal) -> (Result);
+  analyze_repository : (text) -> (Result);
+  canister_info : (principal) -> (Result_1);
+  canister_metadata : (principal) -> (Result_2);
   canister_transactions : (principal) -> (Result_3);
   clear_storage : () -> ();
   delete_canister : (text) -> (Result_4);
