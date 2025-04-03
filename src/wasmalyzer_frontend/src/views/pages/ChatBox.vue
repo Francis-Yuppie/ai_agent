@@ -81,8 +81,8 @@
 </template>
 
 <script>
-import { ref, onMounted, nextTick, watch } from "vue";
-import { wasmalyzer_backend } from "/var/www/html/projects/ai_agent/src/declarations/wasmalyzer_backend";
+import { ref, nextTick, watch } from "vue";
+import { wasmalyzer_backend } from "/var/www/html/projects/ai_agent/src/declarations/wasmalyzer_backend/index";
 import botImg from "/bot.svg";
 import userImg from "/user.svg";
 //   import '@/index.css';
@@ -107,22 +107,33 @@ export default {
     };
 
     const askAgent = async (messages) => {
-      try {
-        const response = await wasmalyzer_backend.chat(messages);
-        chat.value.pop();
-        chat.value.push({ role: { system: null }, content: response });
-      } catch (e) {
-        console.error(e);
-        const eStr = String(e);
-        const match = eStr.match(/(SysTransient|CanisterReject), \"([^\"]+)/);
-        if (match) {
-          alert(match[2]);
-        }
-        chat.value.pop();
-      } finally {
-        isLoading.value = false;
-      }
-    };
+  try {
+    // Log the messages being sent
+    console.log("Sending messages to the backend:", messages);
+
+    const response = await wasmalyzer_backend.chat(messages);
+
+    // Log the response from the backend
+    console.log("Response from the backend:", response);
+
+    // Remove the "thinking" message
+    chat.value.pop();
+
+    // Add the new system response message
+    chat.value.push({ role: { system: null }, content: response });
+  } catch (e) {
+    console.error("Error:", e);
+    const eStr = String(e);
+    const match = eStr.match(/(SysTransient|CanisterReject), \"([^\"]+)/);
+    if (match) {
+      alert(match[2]);
+    }
+    chat.value.pop();
+  } finally {
+    isLoading.value = false;
+  }
+};
+
 
     const handleSubmit = () => {
       if (!inputValue.value.trim() || isLoading.value) return;
