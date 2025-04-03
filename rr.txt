@@ -1,0 +1,75 @@
+use ic_cdk::api::caller;
+use ic_cdk::api::management_canister::http_request::{
+    http_request, CanisterHttpRequestArgument, HttpMethod, HttpResponse,
+};
+use ic_cdk_macros::{query, update};
+use ic_stable_structures::{
+    memory_manager::{MemoryId, MemoryManager},
+    DefaultMemoryImpl, StableBTreeMap,
+};
+use serde::{Deserialize, Serialize};
+
+type Memory = DefaultMemoryImpl;
+type RepoStorage = StableBTreeMap<String, String, Memory>; // Stores user -> repo URL mapping
+
+thread_local! {
+    static MEMORY_MANAGER: MemoryManager<Memory> = MemoryManager::init(DefaultMemoryImpl::default());
+    static USER_REPOS: RepoStorage = RepoStorage::init(MEMORY_MANAGER.with(|m| m.get(MemoryId::new(1))));
+}
+
+const GITHUB_API_BASE: &str = "https://api.github.com/repos";
+
+#[derive(Serialize, Deserialize)]
+struct GitHubRepo {
+    clone_url: String,
+}
+
+// Allow users to link their GitHub repo
+#[ic_cdk::update]
+fn link_github_repo(repo_url: String) {
+    let user_id = caller().to_text();
+    USER_REPOS.with(|repos| {
+        repos.insert(user_id.clone(), repo_url.clone());
+    });
+    ic_cdk::println!("GitHub repository linked for user: {}", user_id);
+}
+
+// Fetch GitHub repo details
+#[ic_cdk::query]
+fn get_github_repo() -> Option<String> {
+    let user_id = caller().to_text();
+    USER_REPOS.with(|repos| repos.get(&user_id).cloned())
+}
+
+// Fetch repository content from GitHub API
+#[ic_cdk::update]
+async fn fetch_github_code() -> Result<String, String> {
+    let user_id = caller().to_text();
+    let repo_url = USER_REPOS.with(|repos| repos.get(&user_id));
+
+    if let Some(repo_url) = repo_url {
+        let url = format!(
+            "{}/{}",
+            GITHUB_API_BASE,
+            repo_url.replace("https://github.com/", "")
+        );
+
+        let request = CanisterHttpRequestArgument {
+            url,
+            method: HttpMethod::GET,
+            headers: vec![("User-Agent".to_string(), "ICP-Canister".to_string())],
+            body: None,
+            transform: None,
+        };
+
+        match http_request(request).await {
+            Ok((HttpResponse { body, .. },)) => {
+                let response_body = String::from_utf8(body).map_err(|e| e.to_string())?;
+                Ok(response_body)
+            }
+            Err(err) => Err(format!("Failed to fetch repo: {:?}", err)),
+        }
+    } else {
+        Err("No GitHub repository linked.".to_string())
+    }
+}

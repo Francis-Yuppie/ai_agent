@@ -3,3 +3,5 @@ members = [
     "src/wasmalyzer_backend"
 ]
 resolver = "2"
+
+

@@ -6,12 +6,8 @@
       "type": "rust"
     },
     "wasmalyzer_frontend": {
-      "dependencies": [
-        "wasmalyzer_backend"
-      ],
-      "source": [
-        "src/wasmalyzer_frontend/dist"
-      ],
+      "dependencies": ["wasmalyzer_backend"],
+      "source": ["src/wasmalyzer_frontend/dist"],
       "type": "assets",
       "workspace": "wasmalyzer_frontend"
     }

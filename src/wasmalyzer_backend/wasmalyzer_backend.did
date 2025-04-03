@@ -1,3 +1,53 @@
+type CanisterInfo = record {
+  id : nat64;
+  updated_at : nat64;
+  name : text;
+  canister_id : text;
+  created_at : nat64;
+  user_id : text;
+};
+type CodeQualityMetrics = record {
+  complexity : float32;
+  style_violations : nat32;
+  test_coverage : opt float32;
+};
+type ErrorResponse = record { field : text; message : text };
+type HttpHeader = record { value : text; name : text };
+type HttpResponse = record {
+  status : nat;
+  body : blob;
+  headers : vec HttpHeader;
+};
+type RepoAnalysisResult = record {
+  suggestions : vec text;
+  code_quality : CodeQualityMetrics;
+  code : text;
+  vulnerabilities : vec Vulnerability;
+};
+type Result = variant { Ok : RepoAnalysisResult; Err : text };
+type Result_1 = variant { Ok : CanisterInfo; Err : text };
+type Result_2 = variant { Ok : text; Err : text };
+type Result_3 = variant { Ok : vec text; Err : text };
+type Result_4 = variant { Ok : bool; Err : ErrorResponse };
+type Result_5 = variant { Ok; Err : text };
+type Result_6 = variant { Ok : CanisterInfo; Err : ErrorResponse };
+type Vulnerability = record {
+  description : text;
+  suggestion : text;
+  severity : text;
+  location : text;
+};
 service : {
-    "greet": (text) -> (text) query;
+  analyze_repository : (text) -> (Result);
+  canister_info : (principal) -> (Result_1);
+  canister_metadata : (principal) -> (Result_2);
+  canister_transactions : (principal) -> (Result_3);
+  clear_storage : () -> ();
+  delete_canister : (text) -> (Result_4);
+  link_repository : (text) -> (Result_5);
+  list_canisters : () -> (vec CanisterInfo) query;
+  register_canister : (text, text) -> (Result_6);
+  transform_response : (HttpResponse) -> (HttpResponse) query;
+  update_canister : (text, text) -> (Result_4);
+  view_canister : (text) -> (Result_6) query;
 }
