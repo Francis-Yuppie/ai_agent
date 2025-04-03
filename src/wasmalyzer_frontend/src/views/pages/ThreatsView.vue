@@ -1,6 +1,5 @@
 <script setup>
 import { CustomerService } from '@/service/CustomerService';
-import { ProductService } from '@/service/ProductService';
 import { FilterMatchMode, FilterOperator } from '@primevue/core/api';
 import { onBeforeMount, reactive, ref } from 'vue';
 
@@ -33,16 +32,16 @@ function getOrderSeverity(order) {
 
 function getSeverity(status) {
     switch (status) {
-        case 'unqualified':
+        case 'High':
             return 'danger';
 
-        case 'qualified':
+        case 'neutralized':
             return 'success';
 
-        case 'new':
+        case 'mitigated':
             return 'info';
 
-        case 'negotiation':
+        case 'medium':
             return 'warn';
 
         case 'renewal':
@@ -53,7 +52,6 @@ function getSeverity(status) {
 
 
 onBeforeMount(() => {
-    ProductService.getProductsWithOrdersSmall().then((data) => (products.value = data));
     CustomerService.getCustomersLarge().then((data) => {
         customers1.value = data;
         loading1.value = false;

@@ -82,7 +82,7 @@ const loginWithInternetIdentity = async () => {
                             <!-- Circular glow effect -->
                             <div class="absolute inset-0 pulse-ring"></div>
                         </div>
-                        <div class="text-gray-900 text-4xl font-bold mb-3">Sakai</div>
+                        <div class="text-gray-900 text-4xl font-bold mb-3">CipherMind</div>
                         <span class="text-gray-600 font-medium text-lg">The next generation of AI-powered experiences</span>
                     </div>
 

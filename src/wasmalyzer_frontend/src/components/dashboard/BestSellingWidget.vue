@@ -12,7 +12,7 @@ const items = ref([
 <template>
     <div class="card">
         <div class="flex justify-between items-center mb-6">
-            <div class="font-semibold text-xl">Best Selling Products</div>
+            <div class="font-semibold text-xl">Running Tasks</div>
             <div>
                 <Button icon="pi pi-ellipsis-v" class="p-button-text p-button-plain p-button-rounded" @click="$refs.menu.toggle($event)"></Button>
                 <Menu ref="menu" popup :model="items" class="!min-w-40"></Menu>
@@ -21,8 +21,8 @@ const items = ref([
         <ul class="list-none p-0 m-0">
             <li class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                 <div>
-                    <span class="text-surface-900 dark:text-surface-0 font-medium mr-2 mb-1 md:mb-0">Space T-Shirt</span>
-                    <div class="mt-1 text-muted-color">Clothing</div>
+                    <span class="text-surface-900 dark:text-surface-0 font-medium mr-2 mb-1 md:mb-0">Canister Alpha</span>
+                    <div class="mt-1 text-muted-color">Scanning</div>
                 </div>
                 <div class="mt-2 md:mt-0 flex items-center">
                     <div class="bg-surface-300 dark:bg-surface-500 rounded-border overflow-hidden w-40 lg:w-24" style="height: 8px">
@@ -33,8 +33,8 @@ const items = ref([
             </li>
             <li class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                 <div>
-                    <span class="text-surface-900 dark:text-surface-0 font-medium mr-2 mb-1 md:mb-0">Portal Sticker</span>
-                    <div class="mt-1 text-muted-color">Accessories</div>
+                    <span class="text-surface-900 dark:text-surface-0 font-medium mr-2 mb-1 md:mb-0">Canister Stickerman</span>
+                    <div class="mt-1 text-muted-color">Scanning</div>
                 </div>
                 <div class="mt-2 md:mt-0 ml-0 md:ml-20 flex items-center">
                     <div class="bg-surface-300 dark:bg-surface-500 rounded-border overflow-hidden w-40 lg:w-24" style="height: 8px">
@@ -45,8 +45,8 @@ const items = ref([
             </li>
             <li class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                 <div>
-                    <span class="text-surface-900 dark:text-surface-0 font-medium mr-2 mb-1 md:mb-0">Supernova Sticker</span>
-                    <div class="mt-1 text-muted-color">Accessories</div>
+                    <span class="text-surface-900 dark:text-surface-0 font-medium mr-2 mb-1 md:mb-0">Canister Supernova</span>
+                    <div class="mt-1 text-muted-color">Scanning</div>
                 </div>
                 <div class="mt-2 md:mt-0 ml-0 md:ml-20 flex items-center">
                     <div class="bg-surface-300 dark:bg-surface-500 rounded-border overflow-hidden w-40 lg:w-24" style="height: 8px">
@@ -57,8 +57,8 @@ const items = ref([
             </li>
             <li class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                 <div>
-                    <span class="text-surface-900 dark:text-surface-0 font-medium mr-2 mb-1 md:mb-0">Wonders Notebook</span>
-                    <div class="mt-1 text-muted-color">Office</div>
+                    <span class="text-surface-900 dark:text-surface-0 font-medium mr-2 mb-1 md:mb-0">Caniter Epsilon</span>
+                    <div class="mt-1 text-muted-color">Scanning</div>
                 </div>
                 <div class="mt-2 md:mt-0 ml-0 md:ml-20 flex items-center">
                     <div class="bg-surface-300 dark:bg-surface-500 rounded-border overflow-hidden w-40 lg:w-24" style="height: 8px">
@@ -69,8 +69,8 @@ const items = ref([
             </li>
             <li class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                 <div>
-                    <span class="text-surface-900 dark:text-surface-0 font-medium mr-2 mb-1 md:mb-0">Mat Black Case</span>
-                    <div class="mt-1 text-muted-color">Accessories</div>
+                    <span class="text-surface-900 dark:text-surface-0 font-medium mr-2 mb-1 md:mb-0">Canister Gamma</span>
+                    <div class="mt-1 text-muted-color">Scanning</div>
                 </div>
                 <div class="mt-2 md:mt-0 ml-0 md:ml-20 flex items-center">
                     <div class="bg-surface-300 dark:bg-surface-500 rounded-border overflow-hidden w-40 lg:w-24" style="height: 8px">

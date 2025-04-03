@@ -29,7 +29,7 @@ const { toggleMenu, toggleDarkMode, isDarkTheme } = useLayout();
                     </g>
                 </svg>
 
-                <span>Chainsaw</span>
+                <span>CipherMsind</span>
             </router-link>
         </div>
 

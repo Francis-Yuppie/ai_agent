@@ -1,7 +1,7 @@
 <template>
-  <div class="flex min-h-screen items-center justify-center bg-gray-50 p-4">
+  <div class="flex  items-center justify-center bg-gray-50 p-4">
     <div
-      class="flex h-[80vh] w-full max-w-2xl flex-col rounded-lg bg-white shadow-lg"
+      class="flex h-[80vh] w-full flex-col rounded-lg bg-white shadow-lg"
     >
       <div
         ref="chatBoxRef"

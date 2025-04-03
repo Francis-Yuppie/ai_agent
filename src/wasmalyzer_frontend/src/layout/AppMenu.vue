@@ -11,7 +11,7 @@ const model = ref([
     { label: "Canisters", icon: "pi pi-fw pi-box", to: "/canisters" },
     { label: "Threats", icon: "pi pi-fw pi-exclamation-triangle", to: "/threats" },
     { label: "Reports", icon: "pi pi-fw pi-file", to: "/reports" },
-    { label: "History", icon: "pi pi-fw pi-clock", to: "/history" },
+    // { label: "History", icon: "pi pi-fw pi-clock", to: "/history" },
     ],
   },
   {

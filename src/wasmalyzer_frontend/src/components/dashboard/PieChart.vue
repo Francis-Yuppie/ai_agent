@@ -31,17 +31,8 @@ function setColorOptions() {
       "Logic Flaws",
     ],
     datasets: [
-    //   {
-    //     label: "My First dataset",
-    //     borderColor: documentStyle.getPropertyValue("--p-indigo-400"),
-    //     pointBackgroundColor: documentStyle.getPropertyValue("--p-indigo-400"),
-    //     pointBorderColor: documentStyle.getPropertyValue("--p-indigo-400"),
-    //     pointHoverBackgroundColor: textColor,
-    //     pointHoverBorderColor: documentStyle.getPropertyValue("--p-indigo-400"),
-    //     data: [65, 59, 90, 81, 56, 55, 40],
-    //   },
       {
-        label: "My Second dataset",
+        label: "Weakness magnitude",
         borderColor: documentStyle.getPropertyValue("--p-purple-400"),
         pointBackgroundColor: documentStyle.getPropertyValue("--p-purple-400"),
         pointBorderColor: documentStyle.getPropertyValue("--p-purple-400"),
@@ -81,7 +72,7 @@ watch(
 
 <template>
   <div class="card flex flex-col items-center ">
-    <div class="font-semibold text-xl">Radar</div>
+    <div class="font-semibold text-xl">Painpoints</div>
     <Chart type="radar" :data="radarData" :options="radarOptions"></Chart>
   </div>
 </template>
