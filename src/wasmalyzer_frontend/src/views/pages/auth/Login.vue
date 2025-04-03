@@ -2,25 +2,34 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { AuthClient } from '@dfinity/auth-client';
+import { useToast } from 'primevue/usetoast';
 
 const router = useRouter();
 const email = ref('');
 const password = ref('');
 const checked = ref(false);
+const toast = useToast();
 
 const loginWithInternetIdentity = async () => {
+    toast.add({ severity: 'success', summary: 'Successful', detail: 'Success', life: 3000 });
+
   console.log('Starting Internet Identity login'); // Debug log
   const authClient = await AuthClient.create();
   await authClient.login({
     identityProvider: `https://identity.ic0.app/?canisterId=${import.meta.env.VITE_CANISTER_ID_INTERNET_IDENTITY}`,
     onSuccess: () => {
       console.log('Login successful'); // Debug log
+    //   localStorage to set auth state 
+    localStorage.setItem('authState', true);
       // Redirect to dashboard
       console.log('Redirecting to /dashboard'); // Debug log
       router.push('/dashboard');
+
     },
     onError: (error) => {
       console.error('Login failed', error); // Debug log
+      //show alert
+
     },
   });
 };
