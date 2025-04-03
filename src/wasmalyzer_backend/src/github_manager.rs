@@ -1,6 +1,6 @@
 use base64::decode;
 use candid::CandidType;
-use candid::Nat;
+// use candid::Nat;
 use ic_cdk::api::management_canister::http_request::{
     http_request,
     CanisterHttpRequestArgument,
@@ -13,7 +13,7 @@ use ic_cdk_macros::query;
 use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use std::collections::HashMap;
-use std::convert::TryInto;
+// use std::convert::TryInto;
 
 // Storage for user -> repo mapping
 thread_local! {
@@ -71,6 +71,7 @@ async fn fetch_repository_contents(repo_url: &str) -> Result<String, String> {
     let api_path = repo_url.replace("https://github.com/", "");
     let url = format!("https://api.github.com/repos/{}/contents", api_path);
 
+    // Use a personal access token for private repositories if needed
     let headers = vec![
         HttpHeader {
             name: "User-Agent".to_string(),
@@ -80,6 +81,11 @@ async fn fetch_repository_contents(repo_url: &str) -> Result<String, String> {
             name: "Accept".to_string(),
             value: "application/vnd.github.v3+json".to_string(),
         },
+        // Uncomment and replace with your personal access token if needed
+        // HttpHeader {
+        //     name: "Authorization".to_string(),
+        //     value: "token YOUR_PERSONAL_ACCESS_TOKEN".to_string(),
+        // },
     ];
 
     let request = CanisterHttpRequestArgument {
@@ -99,9 +105,8 @@ async fn fetch_repository_contents(repo_url: &str) -> Result<String, String> {
 
     let content = String::from_utf8(response.body).map_err(|e| e.to_string())?;
 
-    // PROPERLY HANDLE THE STATUS CODE CONVERSION
-    let digits = response.status.0.to_u64_digits();
-    let status_code = digits.first().copied().unwrap_or(0); // Default to 0 if empty
+    // Convert `response.status` to a valid status code (u64)
+    let status_code = response.status.to_string().parse::<u64>().unwrap_or(0);
 
     if status_code != 200 {
         return Err(format!(
