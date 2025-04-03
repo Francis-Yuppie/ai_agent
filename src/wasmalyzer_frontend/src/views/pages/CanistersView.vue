@@ -71,7 +71,6 @@ function saveCanister() {
             toast.add({ severity: 'success', summary: 'Successful', detail: 'Canister Updated', life: 3000 });
         } else {
             canister.value.id = createId();
-            canister.value.canisterId = createCanisterId();
             canister.value.icon = 'canister-placeholder.svg';
             canister.value.status = canister.value.status ? canister.value.status.value : 'RUNNING';
             canisters.value.push(canister.value);
@@ -116,15 +115,6 @@ function createId() {
     let id = '';
     var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     for (var i = 0; i < 5; i++) {
-        id += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return id;
-}
-
-function createCanisterId() {
-    let id = '';
-    var chars = '0123456789abcdef';
-    for (var i = 0; i < 16; i++) {
         id += chars.charAt(Math.floor(Math.random() * chars.length));
     }
     return id;
@@ -323,6 +313,11 @@ function scanCanister(can) {
                     <label for="name" class="block font-bold mb-3">Name</label>
                     <InputText id="name" v-model.trim="canister.name" required="true" autofocus :invalid="submitted && !canister.name" fluid />
                     <small v-if="submitted && !canister.name" class="text-red-500">Name is required.</small>
+                </div>
+                <div>
+                    <label for="canisterId" class="block font-bold mb-3">Canister ID</label>
+                    <InputText id="canisterId" v-model.trim="canister.canisterId" placeholder="e.g. rrkah-fqaaa-aaaaa-aaaaq-cai" :disabled="!!canister.id" />
+                    <small class="text-gray-500">Canister IDs are immutable after creation</small>
                 </div>
                 <div>
                     <label for="description" class="block font-bold mb-3">Description</label>
