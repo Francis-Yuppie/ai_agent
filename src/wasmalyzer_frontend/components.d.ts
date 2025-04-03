@@ -30,6 +30,7 @@ declare module 'vue' {
     Password: typeof import('primevue/password')['default']
     PieChart: typeof import('./src/components/dashboard/PieChart.vue')['default']
     PricingWidget: typeof import('./src/components/landing/PricingWidget.vue')['default']
+    ProgressSpinner: typeof import('primevue/progressspinner')['default']
     RadioButton: typeof import('primevue/radiobutton')['default']
     Rating: typeof import('primevue/rating')['default']
     RecentSalesWidget: typeof import('./src/components/dashboard/RecentSalesWidget.vue')['default']
