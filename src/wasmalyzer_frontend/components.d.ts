@@ -12,6 +12,7 @@ declare module 'vue' {
     BestSellingWidget: typeof import('./src/components/dashboard/BestSellingWidget.vue')['default']
     Button: typeof import('primevue/button')['default']
     Calendar: typeof import('primevue/calendar')['default']
+    Chart: typeof import('primevue/chart')['default']
     Checkbox: typeof import('primevue/checkbox')['default']
     Column: typeof import('primevue/column')['default']
     DataTable: typeof import('primevue/datatable')['default']
@@ -26,6 +27,7 @@ declare module 'vue' {
     InputIcon: typeof import('primevue/inputicon')['default']
     InputNumber: typeof import('primevue/inputnumber')['default']
     InputText: typeof import('primevue/inputtext')['default']
+    Menu: typeof import('primevue/menu')['default']
     NotificationsWidget: typeof import('./src/components/dashboard/NotificationsWidget.vue')['default']
     Password: typeof import('primevue/password')['default']
     PieChart: typeof import('./src/components/dashboard/PieChart.vue')['default']
@@ -45,5 +47,8 @@ declare module 'vue' {
     ToggleButton: typeof import('primevue/togglebutton')['default']
     Toolbar: typeof import('primevue/toolbar')['default']
     TopbarWidget: typeof import('./src/components/landing/TopbarWidget.vue')['default']
+  }
+  export interface ComponentCustomProperties {
+    StyleClass: typeof import('primevue/styleclass')['default']
   }
 }
