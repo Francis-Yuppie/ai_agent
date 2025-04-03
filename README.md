@@ -1,34 +1,65 @@
-Ciphermind
+# ⚡ Ciphermind ⚡  
+### AI-Powered Canister & Code Vulnerability Scanner  
 
-🔍 About Ciphermind
+<p align="center">
+  <img src="https://img.shields.io/badge/Vue-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D">
+  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white">
+  <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white">
+  <img src="https://img.shields.io/badge/ICP-000000?style=for-the-badge&logo=internet-computer&logoColor=white">
+</p>
 
-Ciphermind is an AI-powered vulnerability scanner designed to analyze smart contract canisters and codebases for security risks, performance bottlenecks, and logical flaws. It generates comprehensive reports with actionable recommendations to enhance code quality and overall security.
+---
 
-✨ Features
+### 🔍 About Ciphermind  
+Ciphermind is an **AI-powered security agent** designed to analyze **canisters and codebases**, identifying vulnerabilities, errors, and performance bottlenecks. It generates detailed reports with solutions to improve security, efficiency, and overall code quality.  
 
-AI-Powered Scanning: Detects vulnerabilities, inefficiencies, and logical errors in smart contracts.
+🔹 **Automated Scanning**: Detects security flaws & inefficiencies in real-time.  
+🔹 **Detailed Reports**: Provides fixes & optimization strategies.  
+🔹 **Security Enhancement**: Prevents potential exploits and risks.  
+🔹 **Performance Insights**: Identifies bottlenecks & suggests optimizations.  
 
-Detailed Reports: Provides in-depth insights with recommendations for fixing issues.
+🚀 **Live Demo:** [Ciphermind Scanner](https://bofir-aaaaa-aaaai-q3wla-cai.icp0.io)  
 
-Security & Performance Optimization: Identifies potential attack vectors and suggests best practices.
+---
 
-User-Friendly Dashboard: Interactive UI for viewing scan results and recommendations.
+### 🛠 Tech Stack  
+- **Frontend:** Vue.js, TailwindCSS  
+- **Backend:** Rust, ICP Smart Contracts  
+- **AI & Security Analysis:** Machine Learning Models for Code & Canister Scanning  
 
-🚀 Future Plans
+---
 
-Automated Interval Scans: Periodic security checks for continuous monitoring.
+### 🛡️ Features  
+✔️ **AI-powered vulnerability detection**  
+✔️ **Performance analysis & bottleneck identification**  
+✔️ **Automated report generation**  
+✔️ **Custom recommendations for fixes**  
+✔️ **Future: Real-time security monitoring & interval scans**  
 
-Real-Time Monitoring: Proactive detection and alerts for new vulnerabilities.
+---
 
-Expanded Language Support: Support for additional smart contract platforms.
+### 🚀 Future Plans  
+🔹 **Real-time Security Monitoring** - Continuous scanning & alerts  
+🔹 **Auto-Suggested Fixes** - AI-driven patch recommendations  
+🔹 **Customizable Rules** - Define scanning parameters  
 
-🌐 Live Demo
+---
 
-🔗 Ciphermind Live
+### 📌 How to Use  
+1️⃣ **Deploy Ciphermind** on ICP  
+2️⃣ **Select your canister or upload code**  
+3️⃣ **Run the scan & receive a full security report**  
+4️⃣ **Apply the recommended fixes**  
+5️⃣ **(Future) Enable auto-scanning for continuous monitoring**  
 
-📜 License
+---
 
-This project is licensed under the MIT License.
+### 🤝 Contributing  
+We welcome contributions! Open an issue or submit a pull request to improve Ciphermind.  
 
-⚡ Secure your canisters. Optimize your code. Build with confidence.
+---
 
+### 📧 Contact  
+For questions or collaboration, reach out via [GitHub Issues](https://github.com/your-repo) or email.  
+
+🚀 **Stay Secure, Stay Ahead!**  
