@@ -29,7 +29,7 @@ const loginWithInternetIdentity = async () => {
 
 <template>
     <FloatingConfigurator />
-    <div class="bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 flex items-center justify-center min-h-screen min-w-[100vw] overflow-hidden relative">
+    <div class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center min-h-screen min-w-[100vw] overflow-hidden relative">
         <!-- Animated background particles -->
         <div class="absolute inset-0 overflow-hidden">
             <div class="particles-container">
@@ -42,7 +42,7 @@ const loginWithInternetIdentity = async () => {
         
         <div class="flex flex-col items-center justify-center relative z-10">
             <div class="glow-effect">
-                <div class="w-full bg-surface-0 dark:bg-gray-900 py-16 px-8 sm:px-16 backdrop-blur-xl bg-opacity-20 dark:bg-opacity-30" style="border-radius: 24px; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);">
+                <div class="w-full bg-white py-16 px-8 sm:px-16 backdrop-blur-xl bg-opacity-95" style="border-radius: 24px; box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);">
                     <div class="text-center mb-8">
                         <!-- AI-themed animated logo -->
                         <div class="mb-8 mx-auto w-24 h-24 relative">
@@ -74,16 +74,16 @@ const loginWithInternetIdentity = async () => {
                             <!-- Circular glow effect -->
                             <div class="absolute inset-0 pulse-ring"></div>
                         </div>
-                        <div class="text-white text-4xl font-bold mb-3">Sakai <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500"></span></div>
-                        <span class="text-blue-200 font-medium text-lg">The next generation of AI-powered experiences</span>
+                        <div class="text-gray-900 text-4xl font-bold mb-3">Sakai</div>
+                        <span class="text-gray-600 font-medium text-lg">The next generation of AI-powered experiences</span>
                     </div>
 
                     <!-- Internet Identity Login Button -->
                     <div class="mb-8">
                         <Button 
                             @click="loginWithInternetIdentity" 
-                            class="w-full mb-5 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 border-none text-white py-3 px-6 text-lg font-medium" 
-                            severity="secondary" 
+                            class="w-full mb-5 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 border-none text-white py-3 px-6 text-lg font-medium" 
+                            severity="primary" 
                             label="Sign in with Internet Identity"
                         >
                             <template #icon>
@@ -98,19 +98,19 @@ const loginWithInternetIdentity = async () => {
                         </div>
                     </div>
 
-                    <div class="text-white">
-                        <label for="email1" class="block text-blue-200 text-xl font-medium mb-2">Email</label>
-                        <InputText id="email1" type="text" placeholder="Your email address" class="w-full md:w-full mb-6 p-3 rounded-lg bg-gray-800 bg-opacity-50 border border-gray-700 focus:border-blue-500 placeholder-gray-400" v-model="email" />
+                    <div class="text-gray-900">
+                        <label for="email1" class="block text-gray-700 text-xl font-medium mb-2">Email</label>
+                        <InputText id="email1" type="text" placeholder="Your email address" class="w-full md:w-full mb-6 p-3 rounded-lg bg-white border border-gray-300 focus:border-blue-500 placeholder-gray-400" v-model="email" />
 
-                        <label for="password1" class="block text-blue-200 font-medium text-xl mb-2">Password</label>
+                        <label for="password1" class="block text-gray-700 font-medium text-xl mb-2">Password</label>
                         <Password id="password1" v-model="password" placeholder="Your password" :toggleMask="true" class="mb-5 custom-password" :feedback="false"></Password>
 
                         <div class="flex items-center justify-between mt-4 mb-8 gap-8">
                             <div class="flex items-center">
                                 <Checkbox v-model="checked" id="rememberme1" binary class="mr-2"></Checkbox>
-                                <label for="rememberme1" class="text-blue-200">Remember me</label>
+                                <label for="rememberme1" class="text-gray-600">Remember me</label>
                             </div>
-                            <span class="font-medium no-underline ml-2 text-right cursor-pointer text-blue-300 hover:text-blue-100 transition-colors duration-200">Forgot password?</span>
+                            <span class="font-medium no-underline ml-2 text-right cursor-pointer text-blue-600 hover:text-blue-800 transition-colors duration-200">Forgot password?</span>
                         </div>
                         <Button label="Sign In" class="w-full py-3 text-lg font-semibold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 border-none" as="router-link" to="/">
                             <template #icon>
@@ -154,13 +154,12 @@ const loginWithInternetIdentity = async () => {
 .glow-effect {
     position: relative;
     border-radius: 24px;
-    background: rgba(17, 24, 39, 0.7);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 
-        0 8px 32px rgba(31, 38, 135, 0.2),
-        0 0 0 1px rgba(255, 255, 255, 0.05),
-        0 0 80px rgba(80, 70, 230, 0.15);
+        0 8px 32px rgba(31, 38, 135, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.8);
     overflow: hidden;
 }
 
@@ -171,26 +170,26 @@ const loginWithInternetIdentity = async () => {
 
 /* Custom styling for Input fields */
 :deep(.p-inputtext) {
-    background: rgba(30, 41, 59, 0.7) !important;
-    color: #e2e8f0 !important;
-    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border: 1px solid #e5e7eb !important;
     transition: all 0.3s ease;
 }
 
 :deep(.p-inputtext:focus) {
-    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4) !important;
-    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+    border-color: #3b82f6 !important;
 }
 
 :deep(.p-inputtext::placeholder) {
-    color: #94a3b8 !important;
+    color: #9ca3af !important;
 }
 
 /* Custom Password component styling */
 :deep(.p-password-input) {
-    background: rgba(30, 41, 59, 0.7) !important;
-    color: #e2e8f0 !important;
-    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    background: #ffffff !important;
+    color: #1f2937 !important;
+    border: 1px solid #e5e7eb !important;
     width: 100% !important;
     padding: 0.75rem !important;
     border-radius: 0.5rem !important;
@@ -251,7 +250,7 @@ const loginWithInternetIdentity = async () => {
     position: absolute;
     width: 4px;
     height: 4px;
-    background: white;
+    background: rgba(99, 102, 241, 0.2);
     border-radius: 50%;
     opacity: 0.2;
     animation: float 15s infinite ease-in-out;
@@ -260,19 +259,19 @@ const loginWithInternetIdentity = async () => {
 .particle:nth-child(odd) {
     width: 6px;
     height: 6px;
-    background: #6366f1;
+    background: rgba(99, 102, 241, 0.3);
 }
 
 .particle:nth-child(3n) {
     width: 8px;
     height: 8px;
-    background: #8b5cf6;
+    background: rgba(139, 92, 246, 0.3);
 }
 
 .particle:nth-child(5n) {
     width: 3px;
     height: 3px;
-    background: #ec4899;
+    background: rgba(236, 72, 153, 0.3);
 }
 
 @keyframes float {
@@ -343,7 +342,7 @@ const loginWithInternetIdentity = async () => {
 
 :deep(.p-button:hover) {
     transform: translateY(-2px) !important;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.1) !important;
 }
 
 :deep(.p-button:active) {
@@ -357,13 +356,13 @@ const loginWithInternetIdentity = async () => {
 }
 
 :deep(.p-checkbox .p-checkbox-box) {
-    background: rgba(30, 41, 59, 0.7) !important;
-    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
 }
 
 :deep(.p-checkbox .p-checkbox-box.p-highlight) {
-    background: #6366f1 !important;
-    border-color: #6366f1 !important;
+    background: #3b82f6 !important;
+    border-color: #3b82f6 !important;
 }
 
 :deep(.p-checkbox .p-checkbox-box .p-checkbox-icon) {
@@ -405,8 +404,8 @@ const loginWithInternetIdentity = async () => {
 }
 
 /* Enhanced hover effect for links */
-.text-blue-300:hover {
-    text-shadow: 0 0 8px rgba(191, 219, 254, 0.4);
+.text-blue-600:hover {
+    text-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
 }
 
 /* Animation for gradient background */
