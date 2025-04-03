@@ -3,7 +3,17 @@
     "ai_backend": {
       "candid": "src/ai_backend/ai_backend.did",
       "package": "ai_backend",
-      "type": "rust"
+      "type": "rust",
+      "management_canister": {
+        "http_request": {
+          "url": "https://api.deepseek.com"
+        }
+      },
+      "metadata": [
+   {
+     "name": "candid:service"
+   }
+]
     },
     "ai_frontend": {
       "dependencies": [
@@ -14,8 +24,25 @@
       ],
       "type": "assets",
       "workspace": "ai_frontend"
+    },
+    "llm": {
+      "candid": "https://github.com/dfinity/llm/releases/latest/download/llm-canister-ollama.did",
+      "type": "custom",
+      "specified_id": "w36hm-eqaaa-aaaal-qr76a-cai",
+      "remote": {
+        "id": {
+          "ic": "w36hm-eqaaa-aaaal-qr76a-cai"
+        }
+      },
+      "wasm": "https://github.com/dfinity/llm/releases/latest/download/llm-canister-ollama.wasm"
     }
   },
+  "metadata": [
+   {
+     "name": "candid:service"
+   }
+],
+ 
   "defaults": {
     "build": {
       "args": "",
