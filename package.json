@@ -16,5 +16,8 @@
   "type": "module",
   "workspaces": [
     "src/wasmalyzer_frontend"
-  ]
+  ],
+  "dependencies": {
+    "@dfinity/auth-client": "^2.4.0"
+  }
 }

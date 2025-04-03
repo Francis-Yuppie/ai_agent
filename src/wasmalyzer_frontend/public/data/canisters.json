@@ -1,0 +1,59 @@
+{
+  "data": [
+    {
+      "id": "1000",
+      "canisterId": "rrkah-fqaaa-aaaaa-aaaaq-cai",
+      "name": "Internet Identity",
+      "description": "Authentication service for decentralized applications",
+      "icon": "canister-placeholder.svg",
+      "cycles": 980000000,
+      "type": "Backend Service",
+      "memorySize": 128,
+      "status": "RUNNING"
+    },
+    {
+      "id": "1001",
+      "canisterId": "ryjl3-tyaaa-aaaaa-aaaba-cai",
+      "name": "NNS Dapp",
+      "description": "Network Nervous System governance application",
+      "icon": "canister-placeholder.svg",
+      "cycles": 782000000,
+      "type": "Smart Contract",
+      "memorySize": 256,
+      "status": "STOPPED"
+    },
+    {
+      "id": "1002",
+      "canisterId": "oeee4-qaaaa-aaaak-qaaeq-cai",
+      "name": "ICRC-1 Ledger",
+      "description": "Token standard implementation for the Internet Computer",
+      "icon": "canister-placeholder.svg",
+      "cycles": 650000000,
+      "type": "Smart Contract",
+      "memorySize": 64,
+      "status": "FAILED"
+    },
+    {
+      "id": "1003",
+      "canisterId": "5cf74-raaa-aaaae-qaaba-cai",
+      "name": "Asset Storage",
+      "description": "Static asset hosting canister",
+      "icon": "canister-placeholder.svg",
+      "cycles": 123000000,
+      "type": "Asset Storage",
+      "memorySize": 512,
+      "status": "STOPPED"
+    },
+    {
+      "id": "1004",
+      "canisterId": "br5f7-7uaaa-aaaaa-qaaca-cai",
+      "name": "Governance DB",
+      "description": "Database for governance-related data",
+      "icon": "canister-placeholder.svg",
+      "cycles": 345000000,
+      "type": "Database",
+      "memorySize": 1024,
+      "status": "FAILED"
+    }
+  ]
+}

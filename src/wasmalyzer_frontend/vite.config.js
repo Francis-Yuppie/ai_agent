@@ -3,6 +3,8 @@ import { defineConfig } from 'vite';
 import environment from 'vite-plugin-environment';
 import vue from '@vitejs/plugin-vue';
 import dotenv from 'dotenv';
+import Components from 'unplugin-vue-components/vite';
+import {PrimeVueResolver} from '@primevue/auto-import-resolver';
 
 dotenv.config({ path: '../../.env' });
 
@@ -27,6 +29,11 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    Components({
+      resolvers: [
+        PrimeVueResolver()
+      ]
+    }),
     environment('all', { prefix: 'CANISTER_' }),
     environment('all', { prefix: 'DFX_' }),
   ],
