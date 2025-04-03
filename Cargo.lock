@@ -33,6 +33,7 @@ dependencies = [
  "ic-llm",
  "ic-management-canister-types",
  "ic-stable-structures",
+ "lazy_static",
  "serde",
  "serde_json",
 ]

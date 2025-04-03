@@ -6,15 +6,25 @@ type CanisterInfo = record {
   created_at : nat64;
   user_id : text;
 };
+type CanisterStatus = record {
+  wasm_code_available : bool;
+  is_active : bool;
+  last_checked : nat64;
+};
 type ErrorResponse = record { errors : vec record { text; text } };
-type Result = variant { Ok : bool; Err : ErrorResponse };
-type Result_1 = variant { Ok : CanisterInfo; Err : ErrorResponse };
+type Result = variant { Ok : text; Err : text };
+type Result_1 = variant { Ok : bool; Err : ErrorResponse };
+type Result_2 = variant { Ok : blob; Err : text };
+type Result_3 = variant { Ok : CanisterInfo; Err : ErrorResponse };
 service : {
-  analyze_canister : (text) -> (text);
+  analyze_canister : (text, text) -> (Result);
   clear_storage : () -> ();
-  delete_canister : (text) -> (Result);
+  delete_canister : (text) -> (Result_1);
+  fetch_canister_wasm : (text) -> (Result_2);
+  get_custom_canister_status : () -> (CanisterStatus) query;
   list_canisters : () -> (vec CanisterInfo) query;
-  register_canister : (text, text) -> (Result_1);
-  update_canister : (text, text) -> (Result);
-  view_canister : (text) -> (Result_1) query;
+  register_canister : (text, text) -> (Result_3);
+  set_custom_canister_status : (bool, bool) -> ();
+  update_canister : (text, text) -> (Result_1);
+  view_canister : (text) -> (Result_3) query;
 }
