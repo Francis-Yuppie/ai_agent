@@ -1,30 +1,56 @@
-# 🚀 CipherMind - AI-Powered GitHub Code Analyzer for ICP
+AI Agent: Canister & Code Scanner
 
-![ICP Logo](https://internetcomputer.org/images/dfinity-logo.png) ![Rust Logo](https://www.rust-lang.org/static/images/rust-social-wide.jpg) ![Vue Logo](https://vuejs.org/images/logo.png) ![Tailwind CSS Logo](https://tailwindcss.com/_next/static/media/tailwindcss-mark.79614a5f61617ba49a0891494521226b.svg)
+  
 
-CipherMind is an **Internet Computer (ICP)** canister that leverages **AI** (specifically ICP LLM) to scan and monitor deployed canisters on ICP and analyze GitHub repositories for security vulnerabilities and code quality issues.
+Overview
 
-## ✨ Features
+The AI Agent is a powerful tool designed to scan canisters and codebases for errors, vulnerabilities, and bottlenecks. It analyzes smart contracts and application code, generating detailed reports with actionable insights to improve security, efficiency, and overall code quality.
 
-### 🔒 Security & Code Analysis
-| Feature | Description |
-|---------|-------------|
-| **Vulnerability Detection** | Identifies potential security flaws in the codebase |
-| **Code Quality Evaluation** | Comprehensive analysis of code structure and style |
-| **Automated Review** | AI-powered suggestions for code improvements |
-| **Dependency Analysis** | Checks for outdated or vulnerable packages |
+Features
 
-### 🧠 Smart Insights
-- Uses AI models to predict potential future issues
-- Customizable analysis parameters
-- Continuous monitoring capabilities
+✅ Automated Code Scanning: Detects syntax errors, security risks, and inefficiencies.
 
-## 🛠️ Tech Stack
+🛡️ Vulnerability Detection: Identifies security flaws in smart contracts and application code.
 
-```mermaid
-graph TD
-    A[Rust] --> B[ICP Canisters]
-    C[Vue.js] --> D[Frontend]
-    E[Tailwind CSS] --> D
-    F[ICP LLM] --> B
-    B --> D
+📊 Performance Analysis: Highlights bottlenecks and optimization opportunities.
+
+📑 Comprehensive Reports: Provides detailed recommendations for fixes and improvements.
+
+🔍 Canister Inspection: Evaluates Internet Computer canisters for stability and security risks.
+
+Future Plans
+
+🚀 Enhanced Monitoring:
+
+Interval-Based Scanning: Scheduled automated scans to keep code secure.
+
+Real-Time Monitoring: Continuous tracking of changes and emerging threats.
+
+Automated Fix Suggestions: AI-powered recommendations for quick resolution of issues.
+
+Integration with CI/CD Pipelines: Seamless scanning during deployment.
+
+Live Demo
+
+Experience the AI Agent in action: Live Link
+
+Tech Stack
+
+Frontend: Vue.js + Tailwind CSS 🎨
+
+Backend: Rust 🦀
+
+Blockchain: Internet Computer (ICP) 🌐
+
+How to Use
+
+Visit the Live Link.
+
+Upload or paste your code.
+
+Initiate a scan and review the generated report.
+
+Apply the suggested fixes to improve security and performance.
+
+🔹 Contributors Welcome! Feel free to contribute, report issues, or suggest features.
+
