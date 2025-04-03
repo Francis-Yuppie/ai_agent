@@ -700,8 +700,7 @@ import TopbarWidget from "@/components/landing/TopbarWidget.vue";
                                         <path
                                             d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
                                     </svg>
-                                    <p class="mt-2 text-base text-gray-600">I'm loving these templates! Very nice
-                                        features and layouts.
+                                    <p class="mt-2 text-base text-gray-600">CipherMind's AI-powered vulnerability detection has completely transformed our development workflow. Before deploying any canister to the Internet Computer, we run it through their system and have caught critical security issues that could have cost us millions. Their automatic code remediation suggestions are like having an expert security consultant on staff 24/7.
                                     </p>
                                 </div>
 
@@ -723,9 +722,7 @@ import TopbarWidget from "@/components/landing/TopbarWidget.vue";
                                         <path
                                             d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
                                     </svg>
-                                    <p class="mt-2 text-base text-gray-600">Really digging this service. Now I can
-                                        quickly bootstrap any
-                                        project.</p>
+                                    <p class="mt-2 text-base text-gray-600">The ICP Canister Optimization tool alone has saved us over 40% in cycle consumption. Our dApps are running faster and more efficiently than ever before. What impressed me most was how the AI not only identified the inefficiencies but provided clear, implementable solutions. CipherMind is now an essential part of our deployment process.</p>
                                 </div>
                                 <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 truncate">Kenny
                                     Jones <span class="mt-1 text-sm leading-5 text-gray-500 truncate">- CEO
@@ -747,8 +744,7 @@ import TopbarWidget from "@/components/landing/TopbarWidget.vue";
                                         <path
                                             d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
                                     </svg>
-                                    <p class="mt-2 text-base text-gray-600">Extremely helpful in every single project we
-                                        have released.
+                                    <p class="mt-2 text-base text-gray-600">As someone responsible for compliance and security across multiple projects, CipherMind has been a game-changer. Their real-time security monitoring caught a potential attack vector within hours of deployment that our traditional security tools missed completely. The integration with Internet Identity was seamless, and their support team is incredibly responsive.
                                     </p>
                                 </div>
 
@@ -770,9 +766,7 @@ import TopbarWidget from "@/components/landing/TopbarWidget.vue";
                                         <path
                                             d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
                                     </svg>
-                                    <p class="mt-2 text-base text-gray-600">Finally a quick and easy system I can use
-                                        for any type of
-                                        project.</p>
+                                    <p class="mt-2 text-base text-gray-600">We evaluated several security solutions for our ICP applications, but nothing came close to CipherMind's comprehensive approach. The automatic vulnerability scanning saved us from a major security breach during our beta launch. Beyond the technology, their team truly understands the unique challenges of developing on the Internet Computer. I wouldn't deploy anything to ICP without running it through CipherMind first.</p>
                                 </div>
 
                                 <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 truncate">Molly
@@ -881,10 +875,8 @@ import TopbarWidget from "@/components/landing/TopbarWidget.vue";
                 </div>
             </div>
         </div>
-        <div class="pt-4 pt-6 mt-10 text-center text-gray-500 border-t border-gray-100">© 2020 CipherMind. All rights
-            reserved.</div>
+        <div class="pt-4 pt-6 mt-10 text-center text-gray-500 border-t border-gray-100">© 2025 . Design by Solanke</div>
 
-            <div class="pt-2 pt-4 mt-2 text-center text-gray-600 border-t border-gray-100">Distributed By <a href="https://themewagon.com/">Themewagon</a></div>
     </footer>
 
     <!-- a little JS for the mobile nav button -->
