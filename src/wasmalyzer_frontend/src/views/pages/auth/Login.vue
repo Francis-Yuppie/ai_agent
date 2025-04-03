@@ -1,5 +1,4 @@
 <script setup>
-import FloatingConfigurator from '@/components/FloatingConfigurator.vue';
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { AuthClient } from '@dfinity/auth-client';
